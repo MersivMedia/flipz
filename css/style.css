@@ -46,14 +46,14 @@ a:hover {
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 /* base code from whiskey drop module, altered to fit project*/
 
 .callout-container {
     height: 100vh;
-    background-image: url('../images/collage.jpg');
+    background-image: url('../images/collage.png');
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -71,13 +71,14 @@ a:hover {
 .content-container {
     padding-top: 75px;
     padding-bottom: 75px;
-
+    position: relative;
+    z-index: 1;
 }
 
 /* background image settings */
 
 .gigs-container {
-    background-image: url("../images/live.jpg");
+    background-image: url("../images/bg-fish.png");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -97,21 +98,39 @@ a:hover {
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 /* background image settings for video section */
 
 .video-container {
-    background-image: url("../images/video-header.png");
-    background-repeat: no-repeat;
+    background-image: url('../images/bg-coral.png'); /* Use the same image as the gallery */
+    background-attachment: fixed;
     background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Ensure it's behind the content */
+}
+
+.video-opaque-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
 }
 
 /* background color setting */
 
 .gallery-container {
-    background-image: url("../images/monkees.jpg");
+    background-image: url("../images/bg-coral.png");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -286,7 +305,7 @@ a:hover {
 /* basic font settings */
 
 .social-title {
-    color: black;
+    color: rgb(255, 255, 255);
     font-weight: 300;
 }
 
@@ -481,7 +500,7 @@ video {
 /* basic font settings, positioning and removal of style, margin and padding from list */
 
 .social-list {
-    font-size: 45px;
+    font-size: 60px;
     font-weight: 400;
     margin: 0px;
     padding: 0;
@@ -492,7 +511,8 @@ video {
 /* displays list horizontally instead of vertically */
 
 .social-list li {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     margin: 0 10px;
 }
 
@@ -632,4 +652,69 @@ input .email-box {
         width: 60%;
 
     }
+}
+
+.callout {
+  padding-top: 50px; /* Add padding above the logo */
+}
+
+.text-title, .white-title, .social-title {
+  font-family: 'Press Start 2P', cursive; /* Use the pixelated font */
+  font-size: 24px; /* Adjust size as needed */
+  text-shadow: 1px 1px 0 #000, 2px 2px 0 #000; /* Create a shadow effect */
+  letter-spacing: 1px; /* Add spacing for a pixelated effect */
+  color: #fff; /* Adjust color as needed */
+}
+
+.navbar-nav > li > a {
+  font-family: 'Press Start 2P', cursive !important; /* Use the pixelated font */
+  font-size: 14px !important; /* Adjust size as needed */
+  text-shadow: 1px 1px 0 #000, 2px 2px 0 #000 !important; /* Create a shadow effect */
+  letter-spacing: 1px !important; /* Add spacing for a pixelated effect */
+  color: #fff !important; /* Adjust color as needed */
+  text-transform: uppercase; /* Ensure text is uppercase for consistency */
+}
+
+/* Apply to sections with white backgrounds, excluding the top container */
+.band-container, .gigs-container, .music-container, .gallery-container, .video-container, .social-container {
+  background-color: #001f3f; /* Deep blue background */
+  color: #ffffff; /* White text */
+  font-family: 'Courier New', Courier, monospace; /* Terminal-like font */
+}
+
+/* Titles retain the pixelated font */
+.text-title, .white-title, .social-title {
+  font-family: 'Press Start 2P', cursive; /* Pixelated font */
+  font-size: 24px; /* Adjust size as needed */
+  text-shadow: 1px 1px 0 #000, 2px 2px 0 #000; /* Create a shadow effect */
+  letter-spacing: 1px; /* Add spacing for a pixelated effect */
+  color: #fff; /* Ensure text is white */
+}
+
+/* Other text elements */
+.page-header, .section-text, .lead, .music-text, .gigs-text {
+  color: #ffffff; /* Ensure all text is white */
+  font-family: 'Courier New', Courier, monospace; /* Terminal-like font */
+}
+
+.inner-container {
+  max-width: 60%;
+  margin: 0 auto; /* Center the container */
+}
+
+.social-list li a {
+  color: #ffffff; /* Ensure icon color is white */
+  display: inline-block; /* Ensure icons are displayed inline */
+  width: 40px; /* Increase width */
+  height: 40px; /* Increase height */
+}
+
+.social-list li a svg {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle; /* Ensure SVGs are vertically centered */
+}
+
+.social-list li a:hover {
+  color: #cccccc; /* Optional: Change color on hover */
 }
